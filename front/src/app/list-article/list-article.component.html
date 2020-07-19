@@ -1,0 +1,49 @@
+
+<div class="container" >
+  
+  <div class="row" >
+    <div class="col-md-6" style="margin-left: auto; margin-right: auto; margin-bottom: 20px;">
+      <div class="card">
+        <div class="card-header">
+          Recherche
+         
+        </div>
+        <div class="card-body" style="margin-left: auto; margin-right: auto;" >
+
+ <button  class="btn btn-info" (click)="change('1')">info</button>
+ <button  class="btn btn-info" (click)="change('2')">vetement</button>
+ <button  class="btn btn-info" (click)="change('3')">librairie</button>
+ <button  class="btn btn-info" (click)="all()">all</button>
+
+
+            <div class="input-group mb-2" style="margin-left: 30px;">
+                <div class="input-group-prepend" >
+                  <div class="input-group-text"  style="background-color: transparent; border: 0px solid transparent;"><i class="fa fa-search" aria-hidden="true"></i></div>
+                </div>
+                <input type="text" [(ngModel)]="search" class="form-control" id="inlineFormInputGroup" placeholder="nom d'article" >
+            </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+  <div class="row">
+        <div class="col-lg-12">
+        
+          <div class="col-lg-4" style="display:inline-block" *ngFor="let e of tabF | filter:search">
+            <div class="card" style="width: 18rem; margin: 10px;">
+              <img [src]="e.image" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">{{e.nom}}</h5>
+                <p class="card-text">{{e.categorie}}</p>
+                <p class="card-text" style="color:red">{{e.prix}}</p>
+
+              </div>
+            </div>
+          </div>
+        
+        </div>
+     </div>
+</div>
+  

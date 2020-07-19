@@ -1,0 +1,41 @@
+<div class="content" >
+    <div class="row">
+      <div class="col-md-6" style="margin-left:auto; margin-right: auto;">
+        <div class="card">
+          <div class="card-header">
+            <h4 style="font-weight: bold;">Nouveau article</h4>
+          </div>
+  
+        <div class="card-body">
+            <form [formGroup]="formC">
+                <div class="form-group">
+                  Nom d'article
+                  <input type="text" formControlName="nom" class="form-control" id="exampleInputEmail1" style="margin-bottom: 0px; margin-top: 0px; padding-top: 0px; padding-bottom: 0px;">
+                </div>
+                
+                <div class="form-group">
+                  <label for="exampleInputEmail1" style="margin-bottom: 0px;">Prix</label>
+                  <input type="text" formControlName="prix" class="form-control" id="exampleInputEmail1" style="margin-bottom: 0px; margin-top: 0px; padding-top: 0px; padding-bottom: 0px;">
+                </div>
+                
+                <div class="form-group">
+                  <label for="exampleFormControlFile1">image</label>
+                  <input type="file" class="form-control-file" name="myFile" id="exampleFormControlFile1" formControlName="image" (change)="selectedM($event)" >
+                </div>
+                
+                
+                <select class="form-control" formControlName="categorie" >
+                  <option value="1">informatique</option>
+                  <option value="2">vetement</option>
+                  <option value="3">librerie</option>
+                </select>
+                
+                <button type="submit" (click)="ajout()" class="btn btn-primary" style="float: right;">Ajouter</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+  </div>
+  
